@@ -7,7 +7,7 @@ var touchScreenMenus = Class.create({
         this.navElement = $$('#nav>li>a');
 
         // Check to see if this is a touchscreen device.
-        if(this.isTouchScreen){
+        if(this.isTouchScreen()){
             // Run touchscreen navigation observer.
             this.touchNavigation();
         }
@@ -56,22 +56,21 @@ var touchScreenMenus = Class.create({
     },
 
     isTouchScreen: function(){
+        var bool;
 
         /*
          *  Function to determine if Browser is Safari Mobile (iOS) or WebKit Mobile (Android).
-         *  Still need to create Firefox Mobile Functionality
+         *  Still need to create Firefox Mobile Functionality.  Originally still effected desktop
+         *  browsers, now using the same methods used in Modernizr.
          */
 
-        if(Prototype.Browser.MobileSafari || (Prototype.Browser.WebKit && function(){
-            try{
-                document.createEvent('TouchEvent');
-                return true;
-            } catch(e) {
-                return false;
-            }
-        })){
-            return true;
+        if(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch){
+            bool = true;
+        }else{
+            bool = false;
         }
+
+        return bool;
     }
 
 });
