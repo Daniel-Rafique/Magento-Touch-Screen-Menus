@@ -9,15 +9,19 @@ This script will allow touch screen users to easily access drop down menus throu
 
 2) Update your Layout XML to include the js file:
 
-```
-<reference name="head">    
-	<action method="addItem">    
-   		<type>skin_js</type>    
-   		<name>js/touchScreenMenus.js</name>    
-   	<action>
-</reference>
-```
+	<reference name="head">    
+		<action method="addItem">    
+   			<type>skin_js</type>    
+   			<name>js/touchScreenMenus.js</name>    
+   		<action>
+	</reference>
+
+> Your layout xml files will be located in app/design/frontend/PACKAGE/THEME/layout	
 
 3) Clear Magento caches if applicable.
 
 4) Open your magento installation on your touch screen friendly browser of choice and enjoy.
+
+### Support
+
+Please feel free to post an issue I'm happy to help.
