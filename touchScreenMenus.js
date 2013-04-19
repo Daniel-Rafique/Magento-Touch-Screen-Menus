@@ -4,7 +4,7 @@ var touchScreenMenus = Class.create({
 
     initialize: function () {
         // Magento's Top Nav
-        this.navElement = $$('#nav>li>a');
+        this.navElement = $$('#nav li a'); //removed direct child-selectors so it works on all subnav levels
 
         // Check to see if this is a touchscreen device.
         if(this.isTouchScreen()){
